@@ -14,7 +14,8 @@ export default function Navigation() {
   }
 
   const handleJoinClick = () => {
-    alert('Contract address will be added when you provide the mint address! 🐢')
+    navigator.clipboard.writeText('9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump')
+    alert('Contract address copied to clipboard! 🐢\n9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump')
   }
 
   return (

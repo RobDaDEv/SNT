@@ -1,6 +1,7 @@
 export default function CommunitySection() {
   const handleJoinClick = () => {
-    alert('Contract address will be added when you provide the mint address! 🐢')
+    navigator.clipboard.writeText('9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump')
+    alert('Contract address copied to clipboard! 🐢\n9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump')
   }
 
   return (
@@ -17,23 +18,23 @@ export default function CommunitySection() {
         </div>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 section-fade">
-          <div className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-colors">
+          <a href="https://x.com/sheldon_nitro" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-all transform hover:scale-105 cursor-pointer">
             <i className="fab fa-twitter text-3xl lg:text-4xl text-cyan-400 mb-3 lg:mb-4"></i>
             <h3 className="font-fredoka text-lg lg:text-xl mb-3 lg:mb-4">Follow on Twitter</h3>
             <p className="text-gray-400 text-sm lg:text-base">Daily updates, memes, and turtle rescue progress!</p>
-          </div>
+          </a>
           
-          <div className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-colors">
-            <i className="fab fa-telegram text-3xl lg:text-4xl text-cyan-400 mb-3 lg:mb-4"></i>
-            <h3 className="font-fredoka text-lg lg:text-xl mb-3 lg:mb-4">Join Telegram</h3>
-            <p className="text-gray-400 text-sm lg:text-base">Chat with the turtle squad community 24/7!</p>
-          </div>
+          <a href="https://www.tiktok.com/@sheldon_nitro" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-pink-500/50 transition-all transform hover:scale-105 cursor-pointer">
+            <i className="fab fa-tiktok text-3xl lg:text-4xl text-pink-400 mb-3 lg:mb-4"></i>
+            <h3 className="font-fredoka text-lg lg:text-xl mb-3 lg:mb-4">Follow on TikTok</h3>
+            <p className="text-gray-400 text-sm lg:text-base">Viral turtle content and fun rescue updates!</p>
+          </a>
           
-          <div className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-colors sm:col-span-2 lg:col-span-1">
-            <i className="fab fa-discord text-3xl lg:text-4xl text-cyan-400 mb-3 lg:mb-4"></i>
-            <h3 className="font-fredoka text-lg lg:text-xl mb-3 lg:mb-4">Discord Server</h3>
-            <p className="text-gray-400 text-sm lg:text-base">Gaming, contests, and exclusive turtle content!</p>
-          </div>
+          <a href="https://pump.fun/coin/9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 lg:p-8 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-green-500/50 transition-all transform hover:scale-105 cursor-pointer sm:col-span-2 lg:col-span-1">
+            <i className="fas fa-play-circle text-3xl lg:text-4xl text-green-400 mb-3 lg:mb-4"></i>
+            <h3 className="font-fredoka text-lg lg:text-xl mb-3 lg:mb-4">Live Stream</h3>
+            <p className="text-gray-400 text-sm lg:text-base">Watch live trading and rescue progress!</p>
+          </a>
         </div>
         
         <div className="bg-gradient-to-br from-orange-500/10 via-yellow-500/10 to-red-500/10 p-6 lg:p-8 rounded-2xl border border-orange-500/30 section-fade shadow-2xl backdrop-blur-sm">
@@ -44,7 +45,12 @@ export default function CommunitySection() {
               </div>
             </div>
             <h3 className="font-fredoka text-xl sm:text-2xl lg:text-3xl mb-4">Ready to Help Free the Turtles?</h3>
-            <p className="text-gray-300 mb-6 text-sm sm:text-base">Contract address will be added here when you provide the mint address!</p>
+            <div className="mb-6">
+              <p className="text-gray-300 mb-2 text-sm">Contract Address:</p>
+              <code className="bg-gray-800/50 px-3 py-2 rounded text-xs lg:text-sm text-cyan-400 font-mono break-all block border border-gray-600">
+                9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump
+              </code>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <button 
                 onClick={handleJoinClick}
@@ -53,10 +59,10 @@ export default function CommunitySection() {
                 <i className="fas fa-copy mr-2"></i>
                 Copy Contract Address
               </button>
-              <button className="w-full sm:w-auto border-2 border-cyan-400 text-cyan-400 px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-cyan-400 hover:text-black transition-all transform hover:scale-105 font-bold">
+              <a href="https://pump.fun/coin/9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto border-2 border-cyan-400 text-cyan-400 px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-cyan-400 hover:text-black transition-all transform hover:scale-105 font-bold inline-flex items-center justify-center">
                 <i className="fas fa-chart-line mr-2"></i>
                 View Chart
-              </button>
+              </a>
             </div>
           </div>
         </div>

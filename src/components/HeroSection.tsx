@@ -108,16 +108,34 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                 </div>
               </button>
               
-              <div className="flex justify-center lg:justify-start space-x-6 sm:space-x-8">
-                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
-                  <i className="fab fa-twitter group-hover:scale-110 transition-transform"></i>
-                </a>
-                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
-                  <i className="fab fa-telegram group-hover:scale-110 transition-transform"></i>
-                </a>
-                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
-                  <i className="fab fa-discord group-hover:scale-110 transition-transform"></i>
-                </a>
+              <div className="space-y-4">
+                <div className="flex justify-center lg:justify-start space-x-6 sm:space-x-8">
+                  <a href="https://x.com/sheldon_nitro" target="_blank" rel="noopener noreferrer" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
+                    <i className="fab fa-twitter group-hover:scale-110 transition-transform"></i>
+                  </a>
+                  <a href="https://www.tiktok.com/@sheldon_nitro" target="_blank" rel="noopener noreferrer" className="group text-2xl sm:text-3xl hover:text-pink-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-pink-400/30">
+                    <i className="fab fa-tiktok group-hover:scale-110 transition-transform"></i>
+                  </a>
+                  <a href="https://pump.fun/coin/9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump" target="_blank" rel="noopener noreferrer" className="group text-2xl sm:text-3xl hover:text-green-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-green-400/30">
+                    <i className="fas fa-play-circle group-hover:scale-110 transition-transform"></i>
+                  </a>
+                </div>
+                
+                <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-cyan-400/20 max-w-lg mx-auto lg:mx-0">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-300 font-medium">Contract Address:</span>
+                    <button 
+                      onClick={() => {navigator.clipboard.writeText('9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump'); alert('Contract copied! 🐢')}} 
+                      className="text-xs bg-cyan-500/20 hover:bg-cyan-500/30 px-2 py-1 rounded text-cyan-300 transition-colors"
+                    >
+                      <i className="fas fa-copy mr-1"></i>Copy
+                    </button>
+                  </div>
+                  <code className="block text-xs lg:text-sm font-mono text-cyan-400 break-all cursor-pointer hover:text-cyan-300 transition-colors" 
+                        onClick={() => {navigator.clipboard.writeText('9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump'); alert('Contract copied! 🐢')}}>
+                    9MiHNzyMpykRWfM2hb5eUYJYVj9yb3v6LTj6Xwr3pump
+                  </code>
+                </div>
               </div>
             </div>
           </div>
