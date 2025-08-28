@@ -1,0 +1,187 @@
+'use client'
+
+import Image from 'next/image'
+
+interface MarketData {
+  current: number
+  target: number
+  percentage: number
+  status: string
+}
+
+interface HeroSectionProps {
+  marketData: MarketData
+}
+
+export default function HeroSection({ marketData }: HeroSectionProps) {
+  const scrollToCommunity = () => {
+    const element = document.getElementById('community')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <section className="relative min-h-screen ocean-gradient flex items-center justify-center overflow-hidden">
+      {/* Animated Bubbles */}
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 text-3xl opacity-70 animate-pulse">⭐</div>
+        <div className="absolute top-40 right-20 text-2xl opacity-60 animate-coin-spin">💎</div>
+        <div className="absolute bottom-40 left-20 text-4xl opacity-50 animate-turtle-bounce">🌊</div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-24 lg:pt-28 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh]">
+          {/* Left Content */}
+          <div className="text-center lg:text-left order-2 lg:order-1 space-y-6 lg:space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-cyan-300 border border-cyan-400/20">
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                Live Rescue Mission in Progress
+              </div>
+              <h1 className="font-fredoka text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+                Rescued from <br className="hidden sm:block" />
+                <span className="text-yellow-400 drop-shadow-lg">abandonment,</span><br className="hidden sm:block" />
+                heading to <br className="hidden sm:block" />
+                <span className="text-green-400 drop-shadow-lg">freedom</span> at<br className="hidden sm:block" />
+                <span className="text-orange-400 drop-shadow-lg">$25M market cap.</span>
+              </h1>
+            </div>
+            
+            {/* Enhanced Progress Bar */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-lg rounded-2xl p-4 lg:p-6 border border-white/10 shadow-2xl max-w-lg mx-auto lg:mx-0">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+                    <span className="font-bold text-white text-sm lg:text-base">Progress to Freedom</span>
+                  </div>
+                  <div className="text-xs lg:text-sm text-gray-300 font-medium">
+                    {marketData.percentage.toFixed(1)}%
+                  </div>
+                </div>
+                
+                <div className="relative bg-gradient-to-r from-gray-800 to-gray-700 rounded-full h-6 lg:h-8 overflow-hidden border border-gray-600 shadow-inner">
+                  <div className="progress-bar absolute inset-0 rounded-full transition-all duration-1000 ease-out shadow-lg" style={{ width: `${Math.min(marketData.percentage, 100)}%` }}></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse opacity-50"></div>
+                </div>
+                
+                <div className="flex justify-between items-center mt-3">
+                  <div className="text-left">
+                    <div className="text-lg lg:text-xl font-bold text-white">${(marketData.current / 1000).toFixed(0)}K</div>
+                    <div className="text-xs text-gray-400">Current</div>
+                  </div>
+                  <div className="flex items-center space-x-2 text-center">
+                    <div className="text-xs text-gray-400">🐢 → 🌊</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg lg:text-xl font-bold text-green-400">$25M</div>
+                    <div className="text-xs text-gray-400">Freedom Goal</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center lg:text-left">
+                <p className="text-gray-300 text-sm lg:text-base max-w-md mx-auto lg:mx-0">
+                  Help Sheldon & Nitro reach their freedom goal! Every milestone brings them closer to the wild.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <button 
+                onClick={scrollToCommunity}
+                className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl font-bold transition-all transform hover:scale-105 glow w-full sm:w-auto shadow-2xl border border-cyan-400/20"
+              >
+                <div className="flex items-center justify-center space-x-2">
+                  <i className="fas fa-rocket group-hover:animate-bounce"></i>
+                  <span>JOIN THE RESCUE</span>
+                </div>
+              </button>
+              
+              <div className="flex justify-center lg:justify-start space-x-6 sm:space-x-8">
+                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
+                  <i className="fab fa-twitter group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
+                  <i className="fab fa-telegram group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a href="#" className="group text-2xl sm:text-3xl hover:text-cyan-400 transition-all duration-300 p-3 rounded-full hover:bg-white/10 border border-transparent hover:border-cyan-400/30">
+                  <i className="fab fa-discord group-hover:scale-110 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Content - Enhanced Turtle Characters */}
+          <div className="relative flex justify-center items-center order-1 lg:order-2">
+            <div className="relative w-full max-w-lg aspect-square">
+              {/* Background Glow Effects */}
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
+              
+              {/* Sheldon - Using the cute green turtle */}
+              <div className="absolute top-0 left-0 animate-turtle-bounce group">
+                <div className="relative">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden shadow-2xl border-4 border-green-400/30 group-hover:border-green-400/60 transition-all bg-gradient-to-br from-green-200 to-green-400 transform -rotate-12 group-hover:rotate-0">
+                    <Image 
+                      src="https://page.gensparksite.com/v1/base64_upload/3225a2daa440c0bdfc8027ca8ea557ef" 
+                      alt="Sheldon the Wise Planner" 
+                      width={200} 
+                      height={200}
+                      className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute -top-2 -right-2 bg-green-400 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce">
+                    💭
+                  </div>
+                </div>
+                <div className="text-center mt-3">
+                  <div className="font-fredoka text-base sm:text-lg lg:text-xl text-green-400 drop-shadow-lg">Sheldon</div>
+                  <div className="text-xs sm:text-sm text-gray-300 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">The Wise Planner</div>
+                </div>
+              </div>
+              
+              {/* Nitro - Using the energetic orange turtle */}
+              <div className="absolute bottom-0 right-0 animate-turtle-bounce group" style={{ animationDelay: '1s' }}>
+                <div className="relative">
+                  <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-orange-400/30 group-hover:border-orange-400/60 transition-all bg-gradient-to-br from-orange-200 to-orange-400 transform rotate-12 group-hover:rotate-6">
+                    <Image 
+                      src="https://page.gensparksite.com/v1/base64_upload/a11a95806b2737d8aec36640bea38c62" 
+                      alt="Nitro the Bold Dreamer" 
+                      width={200} 
+                      height={200}
+                      className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute -top-2 -right-2 bg-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}>
+                    💥
+                  </div>
+                </div>
+                <div className="text-center mt-3">
+                  <div className="font-fredoka text-lg sm:text-xl lg:text-2xl text-orange-400 drop-shadow-lg">Nitro</div>
+                  <div className="text-xs sm:text-sm text-gray-300 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">The Bold Dreamer</div>
+                </div>
+              </div>
+              
+              {/* Enhanced Floating Elements */}
+              <div className="absolute top-1/4 right-1/4 animate-coin-spin text-2xl sm:text-3xl drop-shadow-lg">💰</div>
+              <div className="absolute top-1/2 left-1/4 animate-coin-spin text-xl sm:text-2xl drop-shadow-lg" style={{ animationDelay: '0.5s' }}>🪙</div>
+              <div className="absolute bottom-1/4 left-1/2 animate-coin-spin text-lg sm:text-xl drop-shadow-lg" style={{ animationDelay: '1s' }}>✨</div>
+              <div className="absolute top-1/3 left-1/3 text-lg opacity-70 animate-pulse" style={{ animationDelay: '2s' }}>💎</div>
+              <div className="absolute bottom-1/3 right-1/3 text-xl opacity-60 animate-turtle-bounce" style={{ animationDelay: '1.5s' }}>🌟</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
