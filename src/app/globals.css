@@ -108,6 +108,63 @@
   }
 }
 
+/* Enhanced turtle character styles */
+.turtle-character {
+  position: relative;
+  z-index: 10;
+}
+
+.turtle-character::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  animation: rotateGlow 4s linear infinite;
+}
+
+.turtle-glow {
+  box-shadow: 
+    0 0 30px rgba(16, 185, 129, 0.4),
+    0 0 60px rgba(16, 185, 129, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.turtle-glow-orange {
+  box-shadow: 
+    0 0 30px rgba(251, 146, 60, 0.4),
+    0 0 60px rgba(251, 146, 60, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes turtle-bounce {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.02);
+  }
+}
+
+.animate-turtle-bounce {
+  animation: turtle-bounce 3s ease-in-out infinite;
+}
+
+/* Better mobile visibility */
+@media (max-width: 768px) {
+  .turtle-character {
+    transform: scale(0.9);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-turtle-bounce,
   .animate-coin-spin,

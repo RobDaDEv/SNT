@@ -205,60 +205,70 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
           
           {/* Right Content - Enhanced Turtle Characters */}
           <div className="relative flex justify-center items-center order-1 lg:order-2">
-            <div className="relative w-full max-w-lg aspect-square">
+            <div className="relative w-full max-w-2xl min-h-[500px] flex items-center justify-center">
               {/* Background Glow Effects */}
               <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
               
-              {/* Sheldon - Using the cute green turtle */}
-              <div className="absolute top-0 left-0 animate-turtle-bounce group">
-                <div className="relative">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden shadow-2xl border-4 border-green-400/30 group-hover:border-green-400/60 transition-all bg-gradient-to-br from-green-200 to-green-400 transform -rotate-12 group-hover:rotate-0">
-                    <Image 
-                      src="https://page.gensparksite.com/v1/base64_upload/3225a2daa440c0bdfc8027ca8ea557ef" 
-                      alt="Sheldon the Wise Planner" 
-                      width={200} 
-                      height={200}
-                      className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500"
-                    />
+              {/* Side-by-side layout for better visibility */}
+              <div className="flex items-center justify-center space-x-8 lg:space-x-12 w-full">
+                
+                {/* Sheldon - Left side */}
+                <div className="turtle-character flex flex-col items-center animate-turtle-bounce group">
+                  <div className="relative">
+                    <div className="turtle-glow w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-green-400/60 group-hover:border-green-400/90 transition-all bg-gradient-to-br from-green-50 to-green-200 backdrop-blur-sm group-hover:scale-105 transform duration-500">
+                      <Image 
+                        src="https://page.gensparksite.com/v1/base64_upload/3225a2daa440c0bdfc8027ca8ea557ef" 
+                        alt="Sheldon the Wise Planner" 
+                        width={250} 
+                        height={250}
+                        className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500 brightness-110 contrast-110"
+                        priority
+                      />
+                    </div>
+                    <div className="absolute -top-3 -right-3 bg-green-500 text-white text-sm font-bold px-3 py-2 rounded-full animate-bounce shadow-xl border-2 border-white/20">
+                      💭
+                    </div>
+                    {/* Enhanced glow ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-green-400/40 animate-pulse shadow-lg"></div>
                   </div>
-                  <div className="absolute -top-2 -right-2 bg-green-400 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce">
-                    💭
+                  <div className="text-center mt-4 bg-black/40 backdrop-blur-md rounded-xl p-3 border border-green-400/30">
+                    <div className="font-fredoka text-xl sm:text-2xl lg:text-3xl text-green-400 drop-shadow-lg mb-1">Sheldon</div>
+                    <div className="text-sm sm:text-base text-gray-200 font-medium">The Wise Planner</div>
                   </div>
                 </div>
-                <div className="text-center mt-3">
-                  <div className="font-fredoka text-base sm:text-lg lg:text-xl text-green-400 drop-shadow-lg">Sheldon</div>
-                  <div className="text-xs sm:text-sm text-gray-300 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">The Wise Planner</div>
+                
+                {/* Nitro - Right side */}
+                <div className="turtle-character flex flex-col items-center animate-turtle-bounce group" style={{ animationDelay: '1s' }}>
+                  <div className="relative">
+                    <div className="turtle-glow-orange w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-orange-400/60 group-hover:border-orange-400/90 transition-all bg-gradient-to-br from-orange-50 to-orange-200 backdrop-blur-sm group-hover:scale-105 transform duration-500">
+                      <Image 
+                        src="https://page.gensparksite.com/v1/base64_upload/a11a95806b2737d8aec36640bea38c62" 
+                        alt="Nitro the Bold Dreamer" 
+                        width={250} 
+                        height={250}
+                        className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500 brightness-110 contrast-110"
+                        priority
+                      />
+                    </div>
+                    <div className="absolute -top-3 -right-3 bg-orange-500 text-white text-sm font-bold px-3 py-2 rounded-full animate-bounce shadow-xl border-2 border-white/20" style={{ animationDelay: '0.5s' }}>
+                      💥
+                    </div>
+                    {/* Enhanced glow ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-orange-400/40 animate-pulse shadow-lg" style={{ animationDelay: '0.5s' }}></div>
+                  </div>
+                  <div className="text-center mt-4 bg-black/40 backdrop-blur-md rounded-xl p-3 border border-orange-400/30">
+                    <div className="font-fredoka text-xl sm:text-2xl lg:text-3xl text-orange-400 drop-shadow-lg mb-1">Nitro</div>
+                    <div className="text-sm sm:text-base text-gray-200 font-medium">The Bold Dreamer</div>
+                  </div>
                 </div>
               </div>
               
-              {/* Nitro - Using the energetic orange turtle */}
-              <div className="absolute bottom-0 right-0 animate-turtle-bounce group" style={{ animationDelay: '1s' }}>
-                <div className="relative">
-                  <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-orange-400/30 group-hover:border-orange-400/60 transition-all bg-gradient-to-br from-orange-200 to-orange-400 transform rotate-12 group-hover:rotate-6">
-                    <Image 
-                      src="https://page.gensparksite.com/v1/base64_upload/a11a95806b2737d8aec36640bea38c62" 
-                      alt="Nitro the Bold Dreamer" 
-                      width={200} 
-                      height={200}
-                      className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute -top-2 -right-2 bg-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}>
-                    💥
-                  </div>
-                </div>
-                <div className="text-center mt-3">
-                  <div className="font-fredoka text-lg sm:text-xl lg:text-2xl text-orange-400 drop-shadow-lg">Nitro</div>
-                  <div className="text-xs sm:text-sm text-gray-300 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">The Bold Dreamer</div>
-                </div>
-              </div>
-              
-              {/* Enhanced Floating Elements */}
-              <div className="absolute top-1/4 right-1/4 animate-coin-spin text-2xl sm:text-3xl drop-shadow-lg">💰</div>
-              <div className="absolute top-1/2 left-1/4 animate-coin-spin text-xl sm:text-2xl drop-shadow-lg" style={{ animationDelay: '0.5s' }}>🪙</div>
-              <div className="absolute bottom-1/4 left-1/2 animate-coin-spin text-lg sm:text-xl drop-shadow-lg" style={{ animationDelay: '1s' }}>✨</div>
-              <div className="absolute top-1/3 left-1/3 text-lg opacity-70 animate-pulse" style={{ animationDelay: '2s' }}>💎</div>
-              <div className="absolute bottom-1/3 right-1/3 text-xl opacity-60 animate-turtle-bounce" style={{ animationDelay: '1.5s' }}>🌟</div>
+              {/* Enhanced Floating Elements - repositioned for better visibility */}
+              <div className="absolute top-16 left-16 animate-coin-spin text-2xl sm:text-3xl drop-shadow-lg opacity-80">💰</div>
+              <div className="absolute top-20 right-16 animate-coin-spin text-xl sm:text-2xl drop-shadow-lg opacity-70" style={{ animationDelay: '0.5s' }}>🪙</div>
+              <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-coin-spin text-lg sm:text-xl drop-shadow-lg opacity-75" style={{ animationDelay: '1s' }}>✨</div>
+              <div className="absolute top-1/3 left-8 text-lg opacity-60 animate-pulse" style={{ animationDelay: '2s' }}>💎</div>
+              <div className="absolute bottom-1/3 right-8 text-xl opacity-50 animate-turtle-bounce" style={{ animationDelay: '1.5s' }}>🌟</div>
             </div>
           </div>
         </div>
