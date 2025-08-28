@@ -250,10 +250,10 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                         SHELDON
                       </div>
                       <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm sm:text-base shadow-lg">
-                        🎯 The Strategic Mastermind
+                        🎯 The Little Planner
                       </div>
                       <div className="mt-3 text-gray-700 font-medium text-sm">
-                        "Planning our path to freedom! 🗺️"
+                        "I love making plans for our adventure! 🌟"
                       </div>
                     </div>
                   </div>
@@ -292,10 +292,10 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                         NITRO
                       </div>
                       <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full font-bold text-sm sm:text-base shadow-lg">
-                        🚀 The Fearless Speedster
+                        🚀 The Speedy Explorer
                       </div>
                       <div className="mt-3 text-gray-700 font-medium text-sm">
-                        "Let's ROCKET to freedom! 🌟"
+                        "I can't wait to swim super fast! 🏆"
                       </div>
                     </div>
                   </div>

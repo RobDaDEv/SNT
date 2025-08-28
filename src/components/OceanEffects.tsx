@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useAudio } from '@/hooks/useAudio'
 
 // Audio URLs from generation
-const TURTLE_WELCOME_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/elevenlabs/eleven_v3/b0d523d5-7e8f-482c-a5fb-16587830443d.mp3'
+const TURTLE_WELCOME_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/elevenlabs/eleven_v3/054b8d3f-11bb-4061-94c3-4e33f1d43f21.mp3'
 const OCEAN_AMBIENT_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/2/1cecccd1-05af-42e2-aa6e-e1356f4b0e0d.mp3'
 
 export default function OceanEffects() {
@@ -114,18 +114,18 @@ export default function OceanEffects() {
               </div>
               
               <h2 className="font-fredoka text-2xl lg:text-4xl text-cyan-300 mb-4">
-                Welcome to Our Rescue Mission! 
+                Hi Friend! Welcome to Our Adventure! 🌟
               </h2>
               
               <div className="space-y-4 text-lg">
                 <div className="bg-green-500/20 rounded-xl p-4 border border-green-400/30">
                   <div className="flex items-center space-x-3 mb-2">
                     <span className="text-2xl">🐢</span>
-                    <span className="font-fredoka text-xl text-green-400">Sheldon Says:</span>
+                    <span className="font-fredoka text-xl text-green-400">Little Sheldon Says:</span>
                   </div>
                   <p className="text-green-100">
-                    "Hey there, rescuer! I'm Sheldon, and I've been planning our escape for months. 
-                    With your help, we can reach that $25M goal and swim to freedom!"
+                    "Hi there, friend! I'm Sheldon! I might be just a little turtle, but I'm really good at making plans! 
+                    Will you help us reach $25 million so we can swim free in the big blue sea?"
                   </p>
                   <button 
                     onClick={handlePlayTurtleAudio}
@@ -140,11 +140,11 @@ export default function OceanEffects() {
                 <div className="bg-orange-500/20 rounded-xl p-4 border border-orange-400/30">
                   <div className="flex items-center space-x-3 mb-2">
                     <span className="text-2xl">🐢</span>
-                    <span className="font-fredoka text-xl text-orange-400">Nitro Says:</span>
+                    <span className="font-fredoka text-xl text-orange-400">Little Nitro Says:</span>
                   </div>
                   <p className="text-orange-100">
-                    "YEAAAAH! I'm Nitro and I'm READY TO ROCKET! 🚀 
-                    This rescue mission is gonna be EPIC! Let's show everyone what turtle power can do!"
+                    "Hi hi hi! I'm Nitro and I'm sooo excited to meet you! This rescue is gonna be the BEST adventure ever! 
+                    I wanna swim really really fast when we get to freedom! WHEEEEE! 🌊"
                   </p>
                   <button 
                     onClick={handlePlayOceanAudio}
