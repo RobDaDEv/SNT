@@ -2,11 +2,16 @@
 const nextConfig = {
   images: {
     domains: ['page.gensparksite.com'],
-    unoptimized: true
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'page.gensparksite.com',
+      },
+    ],
   },
-  output: 'export',
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true
+  // Removed output: 'export' to enable API routes for Vercel deployment
+  // trailingSlash: true,
+  // skipTrailingSlashRedirect: true
 }
 
 module.exports = nextConfig
