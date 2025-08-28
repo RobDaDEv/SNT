@@ -1,20 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
 import StorySection from '@/components/StorySection'
 import RoadmapSection from '@/components/RoadmapSection'
 import CommunitySection from '@/components/CommunitySection'
 import Footer from '@/components/Footer'
+import { useMarketData } from '@/hooks/useMarketData'
 
 export default function Home() {
-  const [marketData, setMarketData] = useState({
-    current: 150000,
-    target: 25000000,
-    percentage: 0.6,
-    status: 'demo'
-  })
+  const { marketData, isLoading } = useMarketData()
 
   useEffect(() => {
     // Intersection Observer for fade-in animations

@@ -6,7 +6,15 @@ interface MarketData {
   current: number
   target: number
   percentage: number
-  status: string
+  status: 'loading' | 'live' | 'error' | 'no_data'
+  price: string
+  priceChange24h: number
+  volume24h: number
+  liquidity: number
+  pairAddress?: string
+  dexId?: string
+  error?: string
+  lastUpdated: string
 }
 
 interface HeroSectionProps {
@@ -57,13 +65,23 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
               </h1>
             </div>
             
-            {/* Enhanced Progress Bar */}
+            {/* Enhanced Progress Bar with Live Data */}
             <div className="space-y-4">
               <div className="bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-lg rounded-2xl p-4 lg:p-6 border border-white/10 shadow-2xl max-w-lg mx-auto lg:mx-0">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-                    <span className="font-bold text-white text-sm lg:text-base">Progress to Freedom</span>
+                    <div className={`w-3 h-3 rounded-full ${
+                      marketData.status === 'live' ? 'bg-green-400 animate-pulse' :
+                      marketData.status === 'loading' ? 'bg-yellow-400 animate-spin' :
+                      marketData.status === 'error' ? 'bg-red-400 animate-pulse' :
+                      'bg-gray-400'
+                    }`}></div>
+                    <span className="font-bold text-white text-sm lg:text-base">
+                      Progress to Freedom
+                      {marketData.status === 'live' && <span className="text-green-400 ml-1">LIVE</span>}
+                      {marketData.status === 'loading' && <span className="text-yellow-400 ml-1">LOADING</span>}
+                      {marketData.status === 'error' && <span className="text-red-400 ml-1">OFFLINE</span>}
+                    </span>
                   </div>
                   <div className="text-xs lg:text-sm text-gray-300 font-medium">
                     {marketData.percentage.toFixed(1)}%
@@ -77,8 +95,13 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                 
                 <div className="flex justify-between items-center mt-3">
                   <div className="text-left">
-                    <div className="text-lg lg:text-xl font-bold text-white">${(marketData.current / 1000).toFixed(0)}K</div>
-                    <div className="text-xs text-gray-400">Current</div>
+                    <div className="text-lg lg:text-xl font-bold text-white">
+                      {marketData.current >= 1000000 ? 
+                        `$${(marketData.current / 1000000).toFixed(1)}M` : 
+                        `$${(marketData.current / 1000).toFixed(0)}K`
+                      }
+                    </div>
+                    <div className="text-xs text-gray-400">Current Market Cap</div>
                   </div>
                   <div className="flex items-center space-x-2 text-center">
                     <div className="text-xs text-gray-400">🐢 → 🌊</div>
@@ -90,10 +113,50 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                 </div>
               </div>
               
+              {/* Live Market Stats */}
+              {marketData.status === 'live' && (
+                <div className="bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-cyan-400/20 max-w-lg mx-auto lg:mx-0">
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                      <div className="text-sm text-gray-400">Price</div>
+                      <div className="text-base font-bold text-cyan-400">
+                        {parseFloat(marketData.price) < 0.001 ? 
+                          `$${parseFloat(marketData.price).toExponential(2)}` : 
+                          `$${parseFloat(marketData.price).toFixed(6)}`
+                        }
+                      </div>
+                      <div className={`text-xs ${
+                        marketData.priceChange24h > 0 ? 'text-green-400' : 
+                        marketData.priceChange24h < 0 ? 'text-red-400' : 'text-gray-400'
+                      }`}>
+                        {marketData.priceChange24h > 0 ? '+' : ''}{marketData.priceChange24h.toFixed(2)}% 24h
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400">24h Volume</div>
+                      <div className="text-base font-bold text-orange-400">
+                        {marketData.volume24h >= 1000000 ? 
+                          `$${(marketData.volume24h / 1000000).toFixed(1)}M` : 
+                          `$${(marketData.volume24h / 1000).toFixed(0)}K`
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <div className="text-center lg:text-left">
                 <p className="text-gray-300 text-sm lg:text-base max-w-md mx-auto lg:mx-0">
-                  Help Sheldon & Nitro reach their freedom goal! Every milestone brings them closer to the wild.
+                  {marketData.status === 'live' ? 
+                    'Live market data! Help Sheldon & Nitro reach their freedom goal!' :
+                    'Help Sheldon & Nitro reach their freedom goal! Every milestone brings them closer to the wild.'
+                  }
                 </p>
+                {marketData.status === 'live' && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    Last updated: {new Date(marketData.lastUpdated).toLocaleTimeString()}
+                  </p>
+                )}
               </div>
             </div>
             
