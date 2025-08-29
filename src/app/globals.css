@@ -295,6 +295,53 @@
   animation-delay: 1s;
 }
 
+/* TURTLE FEEDING ANIMATIONS */
+@keyframes feedingParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes happyBounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-5px);
+  }
+}
+
+@keyframes feedingGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.6);
+  }
+}
+
+.turtle-feedable {
+  transition: all 0.2s ease;
+}
+
+.turtle-feedable:hover {
+  transform: scale(1.02);
+  animation: feedingGlow 2s ease-in-out infinite;
+}
+
+.turtle-feedable:active {
+  transform: scale(0.98);
+}
+
 /* Better mobile visibility */
 @media (max-width: 768px) {
   .turtle-character {

@@ -9,6 +9,7 @@ import CommunitySection from '@/components/CommunitySection'
 import Footer from '@/components/Footer'
 import OceanEffects from '@/components/OceanEffects'
 import AudioControls from '@/components/AudioControls'
+import FeedingStats from '@/components/FeedingStats'
 import { useMarketData } from '@/hooks/useMarketData'
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
     <main>
       <OceanEffects />
       <AudioControls />
+      <FeedingStats />
       <Navigation />
       <HeroSection marketData={marketData} />
       <StorySection />

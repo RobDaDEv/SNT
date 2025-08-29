@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import TurtleFeeding from './TurtleFeeding'
 
 interface MarketData {
   current: number
@@ -218,13 +219,13 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
               {/* MASSIVE TURTLE SHOWCASE */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
                 
-                {/* SHELDON - SUPER ENHANCED */}
+                {/* SHELDON - SUPER ENHANCED + FEEDABLE */}
                 <div className="relative group">
                   {/* Outer glow ring */}
                   <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-all duration-500 animate-pulse"></div>
                   
-                  <div className="relative bg-gradient-to-br from-green-100 via-white to-emerald-100 rounded-3xl p-6 border-4 border-green-400/50 shadow-2xl backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500">
-                    {/* Character Image - MASSIVE */}
+                  <div className="relative bg-gradient-to-br from-green-100 via-white to-emerald-100 rounded-3xl p-6 border-4 border-green-400/50 shadow-2xl backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500 turtle-feedable">
+                    {/* Character Image - MASSIVE + INTERACTIVE */}
                     <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                       <div className="absolute inset-0 bg-gradient-to-br from-green-200 to-green-400 rounded-full animate-pulse"></div>
                       <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
@@ -242,6 +243,10 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                         💭
                       </div>
                       <div className="absolute -bottom-2 -left-2 bg-green-400 text-white text-sm px-2 py-1 rounded-full animate-pulse">🧠</div>
+                      <div className="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full animate-pulse" style={{ animationDelay: '1s' }}>🍽️</div>
+                      
+                      {/* FEEDING SYSTEM */}
+                      <TurtleFeeding turtleName="sheldon" marketCap={marketData.current} />
                     </div>
                     
                     {/* Enhanced Character Info */}
@@ -259,13 +264,13 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                   </div>
                 </div>
                 
-                {/* NITRO - SUPER ENHANCED & VISIBLE */}
+                {/* NITRO - SUPER ENHANCED & VISIBLE + FEEDABLE */}
                 <div className="relative group">
                   {/* Outer glow ring - BRIGHT ORANGE */}
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-yellow-400 to-red-400 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-all duration-500 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                   
-                  <div className="relative bg-gradient-to-br from-orange-100 via-white to-yellow-100 rounded-3xl p-6 border-4 border-orange-400/60 shadow-2xl backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500">
-                    {/* Character Image - MASSIVE & BRIGHT */}
+                  <div className="relative bg-gradient-to-br from-orange-100 via-white to-yellow-100 rounded-3xl p-6 border-4 border-orange-400/60 shadow-2xl backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500 turtle-feedable">
+                    {/* Character Image - MASSIVE & BRIGHT + INTERACTIVE */}
                     <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-300 to-red-400 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }}></div>
                       <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
@@ -284,6 +289,10 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                       </div>
                       <div className="absolute -bottom-2 -left-2 bg-orange-400 text-white text-sm px-2 py-1 rounded-full animate-pulse" style={{ animationDelay: '0.8s' }}>⚡</div>
                       <div className="absolute top-2 -left-3 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full animate-bounce" style={{ animationDelay: '1.2s' }}>🔥</div>
+                      <div className="absolute bottom-2 right-2 bg-red-400 text-white text-xs px-2 py-1 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}>🍽️</div>
+                      
+                      {/* FEEDING SYSTEM */}
+                      <TurtleFeeding turtleName="nitro" marketCap={marketData.current} />
                     </div>
                     
                     {/* Enhanced Character Info */}
