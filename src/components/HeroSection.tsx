@@ -253,7 +253,7 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                         🎯 The Little Planner
                       </div>
                       <div className="mt-3 text-gray-700 font-medium text-sm">
-                        "I love making plans for our adventure! 🌟"
+                        "I'm super good at making plans, buddy! 🌟"
                       </div>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ export default function HeroSection({ marketData }: HeroSectionProps) {
                         🚀 The Speedy Explorer
                       </div>
                       <div className="mt-3 text-gray-700 font-medium text-sm">
-                        "I can't wait to swim super fast! 🏆"
+                        "I wanna zoom zoom through the water! 🏆"
                       </div>
                     </div>
                   </div>

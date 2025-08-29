@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useAudio } from '@/hooks/useAudio'
 
 // Audio URLs from generation
-const TURTLE_WELCOME_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/elevenlabs/eleven_v3/054b8d3f-11bb-4061-94c3-4e33f1d43f21.mp3'
+const TURTLE_WELCOME_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/elevenlabs/eleven_v3/c9dbdc2f-f264-48c0-8132-a7c307fd9a49.mp3'
 const OCEAN_AMBIENT_AUDIO = 'https://cdn1.genspark.ai/user-upload-image/2/1cecccd1-05af-42e2-aa6e-e1356f4b0e0d.mp3'
 
 export default function OceanEffects() {
@@ -124,8 +124,8 @@ export default function OceanEffects() {
                     <span className="font-fredoka text-xl text-green-400">Little Sheldon Says:</span>
                   </div>
                   <p className="text-green-100">
-                    "Hi there, friend! I'm Sheldon! I might be just a little turtle, but I'm really good at making plans! 
-                    Will you help us reach $25 million so we can swim free in the big blue sea?"
+                    "Hi there, buddy! I'm Sheldon! I'm just a little turtle, but I'm super good at making plans! 
+                    Will you be our friend and help us get to $25 million so we can be free?"
                   </p>
                   <button 
                     onClick={handlePlayTurtleAudio}
@@ -143,8 +143,8 @@ export default function OceanEffects() {
                     <span className="font-fredoka text-xl text-orange-400">Little Nitro Says:</span>
                   </div>
                   <p className="text-orange-100">
-                    "Hi hi hi! I'm Nitro and I'm sooo excited to meet you! This rescue is gonna be the BEST adventure ever! 
-                    I wanna swim really really fast when we get to freedom! WHEEEEE! 🌊"
+                    "WOW! Hi hi hi! I'm Nitro and this is SO COOL! This adventure is gonna be AWESOME! 
+                    I wanna zoom zoom zoom through the water! This is gonna be EPIC! YAAAAAY! 🌊"
                   </p>
                   <button 
                     onClick={handlePlayOceanAudio}
