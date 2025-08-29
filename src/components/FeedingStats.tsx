@@ -93,43 +93,26 @@ export default function FeedingStats() {
 
   return (
     <>
-      {/* Daily Goal Progress */}
-      <div className="fixed top-24 left-4 z-30 bg-gradient-to-br from-blue-900/90 to-cyan-900/90 backdrop-blur-md rounded-xl p-4 border border-cyan-400/30 shadow-2xl max-w-xs">
-        <div className="text-center space-y-3">
-          <div className="flex items-center justify-center space-x-2">
-            <span className="text-2xl">🎯</span>
+      {/* Daily Goal Progress - Redesigned */}
+      <div className="fixed top-6 left-6 z-30 bg-black/40 backdrop-blur-lg rounded-2xl p-4 border border-cyan-400/20 shadow-xl max-w-sm">
+        <div className="space-y-3">
+          <div className="flex items-center space-x-3">
+            <div className="text-3xl">🌊</div>
             <div>
-              <div className="text-sm font-medium text-cyan-300">Daily Community Goal</div>
-              <div className="text-xs text-gray-400">Feed the turtles together!</div>
+              <h3 className="text-lg font-bold text-white">Community Goal</h3>
+              <p className="text-sm text-cyan-300">{dailyGoal.current.toLocaleString()} / {dailyGoal.target.toLocaleString()} feeds</p>
             </div>
           </div>
           
           <div className="relative">
-            <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+            <div className="w-full bg-gray-800/60 rounded-full h-2 overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-green-400 via-emerald-400 to-cyan-400 transition-all duration-500 relative"
+                className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-1000 ease-out"
                 style={{ width: `${Math.min(progress, 100)}%` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-              </div>
+              />
             </div>
-            <div className="flex justify-between items-center mt-1">
-              <span className="text-xs text-gray-400">0</span>
-              <span className="text-sm font-bold text-white">
-                {dailyGoal.current} / {dailyGoal.target}
-              </span>
-              <span className="text-xs text-gray-400">{dailyGoal.target}</span>
-            </div>
-          </div>
-          
-          <div className="flex justify-between items-center text-xs">
-            <div className="text-center">
-              <div className="text-gray-400">Progress</div>
-              <div className="text-green-400 font-bold">{progress.toFixed(1)}%</div>
-            </div>
-            <div className="text-center">
-              <div className="text-gray-400">Total Feeds</div>
-              <div className="text-cyan-400 font-bold">{totalFeeds.toLocaleString()}</div>
+            <div className="mt-2 text-right">
+              <span className="text-sm font-bold text-cyan-400">{progress.toFixed(0)}%</span>
             </div>
           </div>
         </div>
@@ -146,18 +129,7 @@ export default function FeedingStats() {
         </div>
       )}
 
-      {/* Feeding Instructions (shows for first-time visitors) */}
-      {totalFeeds < 5 && (
-        <div className="fixed bottom-4 left-4 z-30 bg-gradient-to-r from-green-500/90 to-emerald-500/90 backdrop-blur-md rounded-xl p-4 border border-green-400/30 shadow-2xl max-w-xs animate-pulse">
-          <div className="flex items-center space-x-3">
-            <span className="text-2xl">👆</span>
-            <div>
-              <div className="text-sm font-bold text-white">Click the turtles to feed them!</div>
-              <div className="text-xs text-green-100">Help Sheldon & Nitro grow happy & strong 🐢💕</div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Instructions removed to prevent overlap */}
     </>
   )
 }

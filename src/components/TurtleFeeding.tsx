@@ -198,30 +198,9 @@ export default function TurtleFeeding({ turtleName, marketCap }: TurtleFeedingPr
         )}
       </div>
       
-      {/* Turtle mood indicator */}
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 border border-white/20 z-25 pointer-events-none">
-        <div className="flex items-center space-x-2 text-xs">
-          <div className="flex items-center space-x-1">
-            <span>💖</span>
-            <div className="w-12 h-1.5 bg-gray-600 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 transition-all duration-500"
-                style={{ width: `${mood.happiness}%` }}
-              />
-            </div>
-          </div>
-          <span className={`font-medium ${moodDesc.color}`}>
-            {moodDesc.text}
-          </span>
-        </div>
-      </div>
-      
-      {/* Feeding counter */}
-      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-xl px-3 py-2 border border-white/20 z-25 pointer-events-none">
-        <div className="text-center">
-          <div className="text-xs text-gray-300">Times Fed</div>
-          <div className="text-lg font-bold text-white">{mood.totalFeeds}</div>
-        </div>
+      {/* Simple feeding counter only */}
+      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 border border-white/10 z-25 pointer-events-none">
+        <div className="text-xs font-bold text-white">{mood.totalFeeds}</div>
       </div>
       
       {/* Milestone celebration */}
@@ -233,13 +212,7 @@ export default function TurtleFeeding({ turtleName, marketCap }: TurtleFeedingPr
         </div>
       )}
       
-      {/* Global feeding stats */}
-      <div className="absolute top-2 right-2 bg-black/40 backdrop-blur-sm rounded-lg px-2 py-1 border border-white/10 z-25 pointer-events-none">
-        <div className="text-xs text-gray-300 text-center">
-          <div>🌍 Total Community Feeds</div>
-          <div className="text-sm font-bold text-cyan-400">{globalFeeds.toLocaleString()}</div>
-        </div>
-      </div>
+
     </div>
   )
 }

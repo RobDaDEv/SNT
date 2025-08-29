@@ -22,15 +22,17 @@ export default function AudioControls() {
       oceanAudio.pause()
     } else {
       oceanAudio.play()
-      // Loop the audio
-      if (oceanAudio.currentTime === 0) {
-        const audioElement = document.querySelector('audio')
-        if (audioElement) {
-          audioElement.loop = true
-        }
-      }
     }
   }
+
+  // Auto-start ocean sounds and set loop
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      oceanAudio.play()
+    }, 4000) // Start after page loads
+    
+    return () => clearTimeout(timer)
+  }, [oceanAudio])
 
   if (!isVisible) return null
 
