@@ -1,0 +1,11 @@
+# Ignore build outputs and cache
+.next
+out
+node_modules
+.env.local
+.DS_Store
+*.log
+
+# Ignore development files
+.git
+README.md
